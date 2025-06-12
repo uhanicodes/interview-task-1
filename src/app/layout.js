@@ -20,9 +20,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:max-w-7xl lg:mx-auto`}
       >
+        <div className="p-2">
+          <h1 className="text-xl md:text-2xl">My Awesome Shop</h1>
+        </div>
         {children}
+        <div className="p-2">
+          <h1>Footer</h1>
+        </div>
       </body>
     </html>
   );

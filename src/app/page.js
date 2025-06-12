@@ -38,21 +38,20 @@ export default function Home() {
 
   return (
     <div className="m-4 md:m-8">
-      <h1 className="text-xl md:text-2xl font-bold md:font-normal">My Awesome Shop</h1>
+      <h2>Latest arrivals</h2>
       <div className="flex flex-wrap gap-4 mt-4 justify-center">
         {products.length > 0 ? products.map((product) => (
+          <Link href={`/products/${product._id}`} key={product._id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
           <Product
             key={product._id}
             name={product.name}
             price={product.price}
             image={product.images[0]?.secure_url || '/placeholder.png'}
           />
+          </Link>
         )): (
           <p className="text-gray-500">Loading products...</p>
         )}
-      </div>
-      <div className="mt-8 p-4">
-        <p>Footer</p>
       </div>
     </div>
   );
